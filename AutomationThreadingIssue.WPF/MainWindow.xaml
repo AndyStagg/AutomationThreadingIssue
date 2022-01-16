@@ -1,0 +1,51 @@
+﻿<Window x:Class="AutomationThreadingIssue.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutomationThreadingIssue.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="AutomationStatus_Grid" Grid.Row="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="Status_TextBlock" Grid.Column="0" HorizontalAlignment="Center" />
+
+            <Button x:Name="Run_Button" 
+                Height="25" Width="50" Grid.Column="1"
+                Content="Run" Click="Run_Button_Click"
+                HorizontalAlignment="Center" />
+        </Grid>
+
+        <Separator Grid.Row="1"/>
+
+        <Grid x:Name="AutomationInput_Grid" Grid.Row="2" Margin="10" IsEnabled="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="Input_Description" Grid.Row="0"
+                       Text="Please enter some user input"
+                       HorizontalAlignment="Center" />
+
+            <TextBox x:Name="Input_TextBox" Grid.Row="1"
+                     Width="200" />
+
+            <Button x:Name="Input_Button" Grid.Row="2"
+                    Height="25" Width="50"
+                    Content="Ok" Click="Input_Button_Click" />
+        </Grid>
+    </Grid>
+</Window>
